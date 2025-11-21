@@ -524,7 +524,7 @@ bool post_health(const std::shared_ptr<http_req>& req, const std::shared_ptr<htt
             res->set_body(400, result.dump());
             return alive;
         }
-        if(req_json.contains("shutdown") && req_json["shutdown"] == true) {
+        if(req_json.contains("shutdown"){ //TODO: && req_json["shutdown"] == true) {
             server->set_unhealthy();
             result["ok"] = false;
             result["msg"] = "Shutdown requested.";
